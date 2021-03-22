@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ma collection</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Ajouter un jeu</h2>
+  <button ion-button (click)="onGoToCreate()">Ajouter</button>
+  <h2>Liste de mes jeux</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let jeu of jeux">
+        <ion-list (click)="onGoToJeu(jeu.data.name, jeu.id)">
+          <ion-item>
+            <img [src]="jeu.data.cover" [alt]="jeu.data.name">
+          </ion-item>
+          <ion-item>
+            {{jeu.data.name}}
+          </ion-item>
+          <ion-item>
+            {{jeu.data.release_date}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

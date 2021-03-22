@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {CollecListPage} from "../collec-list/collec-list";
 
 @Component({
   selector: 'page-home',
@@ -9,6 +10,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
+  }
+
+  onGoToCollec() {
+    this.navCtrl.push(CollecListPage);
   }
 
 }
